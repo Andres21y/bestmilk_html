@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
   const password = document.getElementById('password').value;
 
   try {
-    const response = await fetch('http://localhost:5000/login', {
+    const response = await fetch('http://localhost:5000/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
@@ -26,7 +26,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
     // Redirigir
     setTimeout(() => {
-      window.location.href = '/home';
+      window.location.href = '/api/home';
     }, 2000);
 
   } catch (error) {
